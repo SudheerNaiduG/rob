@@ -11,13 +11,13 @@ class Config(object):
     # Get This From @StringSessionGen_Bot
     STRING_SESSION = os.environ.get("STRING_SESSION")
     # Forward From Chat ID
-    FORWARD_FROM_CHAT_ID = os.environ.get("FORWARD_FROM_CHAT_ID", None)
+    FORWARD_FROM_CHAT_ID = "-1001162930686"
     # Forward To Chat ID
-    FORWARD_TO_CHAT_ID = os.environ.get("FORWARD_TO_CHAT_ID", None)
+    FORWARD_TO_CHAT_ID = "-1001299878654"
     # Your User ID
     USER_ID = os.environ.get("USER_ID", None)
     # Sleep Time while Kang
-    SLEEP_TIME = int(os.environ.get("SLEEP_TIME", 10))
+    SLEEP_TIME = "10"
     # Heroku Management
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY")
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME")
