@@ -15,7 +15,7 @@ class Config(object):
     # Forward To Chat ID
     FORWARD_TO_CHAT_ID = "-1001299878654"
     # Your User ID
-    USER_ID = os.environ.get("USER_ID", None)
+    USER_ID = "1737627793"
     # Sleep Time while Kang
     SLEEP_TIME = "10"
     # Heroku Management
