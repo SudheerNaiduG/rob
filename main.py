@@ -13,7 +13,7 @@ User = Client(session_name=Config.STRING_SESSION, api_hash=Config.API_HASH, api_
 
 async def kanger(msg):
     await msg.edit(text="Forwarding Now ...")
-    async for message in User.iter_history(chat_id=int(Config.FORWARD_FROM_CHAT_ID),offset=8603):
+    async for message in User.iter_history(chat_id=int(Config.FORWARD_FROM_CHAT_ID),offset_id=8603):
         await asyncio.sleep(10)
         try:
             await message.copy(int(Config.FORWARD_TO_CHAT_ID))
