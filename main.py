@@ -17,7 +17,7 @@ async def kanger(msg):
         await asyncio.sleep(10)
         try:
             if message.document or message.video:
-                await message.copy(int(Config.FORWARD_TO_CHAT_ID),caption=message.file_name)
+                await message.copy(int(Config.FORWARD_TO_CHAT_ID),caption=message.document.file_name)
             else:
                 await message.copy(int(Config.FORWARD_TO_CHAT_ID))
         except FloodWait as e:
