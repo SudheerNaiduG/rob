@@ -16,7 +16,7 @@ async def kanger(msg):
     async for message in User.iter_history(chat_id=-1001392314293,limit=5,reverse=True):
         await asyncio.sleep(10)
         try:
-            if message.document or message.video:
+            if message.document:
                 await message.copy(int(Config.FORWARD_TO_CHAT_ID),caption=message.document.file_name)
             else:
                 await message.copy(int(Config.FORWARD_TO_CHAT_ID))
