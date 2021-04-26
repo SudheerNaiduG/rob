@@ -13,10 +13,13 @@ User = Client(session_name=Config.STRING_SESSION, api_hash=Config.API_HASH, api_
 
 async def kanger(msg):
     await msg.edit(text="Forwarding Now ...")
-    async for message in User.iter_history(chat_id=-1001392314293,reverse=True):
+    async for message in User.iter_history(chat_id=-1001392314293,limit=5,reverse=True):
         await asyncio.sleep(10)
         try:
-            await message.copy(int(Config.FORWARD_TO_CHAT_ID))
+            if message.document or message.video:
+                await message.copy(int(Config.FORWARD_TO_CHAT_ID),caption=message.file_name)
+            else:
+                await message.copy(int(Config.FORWARD_TO_CHAT_ID))
         except FloodWait as e:
             await User.send_message(chat_id="me", text=f"#FloodWait: Stopping Forwarder for `{e.x}s`!")
             await asyncio.sleep(e.x)
