@@ -13,7 +13,7 @@ User = Client(session_name=Config.STRING_SESSION, api_hash=Config.API_HASH, api_
 
 async def kanger(msg):
     await msg.edit(text="Forwarding Now ...")
-    async for message in User.iter_history(chat_id=-1001402973391,offset_id=29418,reverse=True):
+    async for message in User.iter_history(chat_id=-1001402973391,offset_id=33699,reverse=True):
         await asyncio.sleep(10)
         try:
             if message.document:
